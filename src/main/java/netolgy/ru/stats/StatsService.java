@@ -42,26 +42,32 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int monthLessAvg(int[] sales) {
+      public int monthLessAvg(int[] sales) {
         int monthLess = 0;
-        for (int sale : sales) {
-            if (sale < avgSaleOnMonth(sales))
-                monthLess++;
+        int avg = avgSaleOnMonth(sales);
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < avg)
+                monthLess = monthLess + 1;
         }
         return monthLess;
     }
 
     public int monthMoreAvg(int[] sales) {
         int monthMore = 0;
-        for (int sale : sales) {
-            if (sale > avgSaleOnMonth(sales))
-                monthMore++;
+        int avg = avgSaleOnMonth(sales);
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > avg)
+                monthMore = monthMore +1;
         }
         return monthMore;
 
 
+
     }
-}
+
+    }
+
+
 
 
 
