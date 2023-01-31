@@ -47,7 +47,7 @@ public class StatsService {
         int avg = avgSaleOnMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg)
-                monthLess = monthLess + 1;
+                monthLess++;
         }
         return monthLess;
     }
@@ -57,7 +57,7 @@ public class StatsService {
         int avg = avgSaleOnMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > avg)
-                monthMore = monthMore +1;
+                monthMore++;
         }
         return monthMore;
 
